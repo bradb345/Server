@@ -8,3 +8,4 @@ this is the second edit.
 
 Gurshams commit
 
+i hate the terminal soooooo much
