@@ -43,7 +43,7 @@ content-type:application/json
 }
 
 ###
-#LOGIN USER 
+#LOGIN USER
 POST {{url}}auth/login/
 content-type:application/json
 
