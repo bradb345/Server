@@ -1,12 +1,12 @@
 # from rest_framework.exceptions import NotFound
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
 from rest_framework import status
 from rest_framework.exceptions import NotFound
+from rest_framework.permissions import IsAuthenticated
 
-from .models import Project
-from .serializers import ProjectSerializer, PopulatedProjectSerializer
+from .models import Project, Comment
+from .serializers import ProjectSerializer, PopulatedProjectSerializer, PopulatedCommentSerializer
 
 class ProjectListView(APIView):
 
@@ -37,4 +37,17 @@ class ProjectDetailView(APIView):
             serialized_project = PopulatedProjectSerializer(project)
             return Response(serialized_project.data,status=status.HTTP_200_OK) # send the JSON to the client 
         except Project.DoesNotExist:
-            raise NotFound()       
+            raise NotFound()  
+
+class CommentListView(APIView):
+
+        permission_classes = (IsAuthenticated, )
+
+        def post(self, request, project_pk):
+            request.data['project'] = project_pk
+            request.data['owner'] = request.user.id
+            serialized_comment = PopulatedCommentSerializer(data=request.data)
+            if serialized_comment.is_valid():
+                serialized_comment.save()
+                return Response(serialized_comment.data, status=status.HTTP_201_CREATED)
+            return Response(serialized_comment.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)    

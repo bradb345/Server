@@ -33,7 +33,7 @@ class PopulatedCommentSerializer(CommentSerializer):
     owner = UserSerializer()
 
 class PopulatedProjectSerializer(ProjectSerializer):
-    comments = CommentSerializer(many=True)
+    comments = PopulatedCommentSerializer(many=True)
     # favorited_by = UserSerializer(many=True)
     project_type = ProjectTypeSerializer(many=True)
     owner = UserSerializer()

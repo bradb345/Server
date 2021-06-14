@@ -1,13 +1,12 @@
 @url=http://localhost:8000/api/
-@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYyNDI4NjEyMX0.6-OWum_CB1WMj8M_NDx_AEc4BNQrlnflzIL8h54sIr8
-
+@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUsImV4cCI6MTYyNDI5MDI2NH0.ZvsqMPawOhFrdEYKZXhsedFPQpoZcgPFxmx6GnosO0w
 #GET ALL PROJECTS
 GET {{url}}projects/
 
 ###
 
 #GET A SINGLE PROJECT
-GET {{url}}projects/1/
+GET {{url}}projects/4/
 
 
 ###
@@ -25,7 +24,7 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "projectName":"new Project",
+  "projectName":"new Project10",
   "url":"http://www.google.com"
 }
 
@@ -36,8 +35,8 @@ POST {{url}}auth/register/
 content-type:application/json
 
 {
-"username":"brad",
-"email":"brad@mail.com",
+"username":"clem",
+"email":"clem@mail.com",
 "password":"pass",
 "passwordConfirmation":"pass"
 }
@@ -48,9 +47,22 @@ POST {{url}}auth/login/
 content-type:application/json
 
 {
-  "email":"brad@mail.com",
+  "email":"clem@mail.com",
   "password":"pass"
 }
+
+###
+#MAKE A COMMENT 
+
+POST {{url}}projects/4/comments/
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "content":"this is a comment to test before i push!"
+}
+
+
 
 
 
