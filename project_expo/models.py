@@ -14,6 +14,11 @@ class Project(models.Model):
         related_name='project',
         blank=True
     )
+    owner = models.ForeignKey(
+        'jwt_auth.User',
+        related_name='created_projects',
+        on_delete=models.CASCADE
+    )
 
     def __str__(self):
         return f'{self.project_name}'
@@ -25,5 +30,11 @@ class Comment(models.Model):
         related_name='comments',
         on_delete=models.CASCADE
     )
+    owner = models.ForeignKey(
+        'jwt_auth.User',
+        related_name='comments',
+        on_delete=models.CASCADE
+    )
+
     def __str__(self):
         return f'comment {self.id} on {self.project}'
