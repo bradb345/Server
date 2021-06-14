@@ -1,15 +1,62 @@
 @url=http://localhost:8000/api/
+@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImV4cCI6MTYyNDI4MTE4OH0.0ybwrQXgX8h2s83TjuVZKgMGO1w9sB11rVHWJv3Rs9s
 
+#GET ALL PROJECTS
 GET {{url}}projects/
 
 ###
 
-GET {{url}}projects/1
+#GET A SINGLE PROJECT
+GET {{url}}projects/1/
 
 
 ###
 
-DELETE {{url}}projects/5
+#DELETE A PROJECT
+DELETE {{url}}projects/5/
+content-type: application/json
+Authorization: Bearer{{token}}
+
+###
+
+#CREATE A PROJECT
+POST {{url}}projects/
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "projectName":"new Project",
+  "url":"http://www.google.com"
+}
+
+
+###
+#CREATE A NEW USER
+POST {{url}}auth/register/
+content-type:application/json
+
+{
+"username":"cc2",
+"email":"cc2@mail.com",
+"password":"pass",
+"passwordConfirmation":"pass",
+"profileImage":"url"
+}
+
+###
+#LOGIN USER 
+POST {{url}}auth/login/
+content-type:application/json
+
+{
+  "email":"cc2@mail.com",
+  "password":"pass"
+}
+
+@token= Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImV4cCI6MTYyNDI4MTE4OH0.0ybwrQXgX8h2s83TjuVZKgMGO1w9sB11rVHWJv3Rs9s
+
+
+
 
 
 

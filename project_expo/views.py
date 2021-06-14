@@ -15,6 +15,14 @@ class ProjectListView(APIView):
         serialized_project = ProjectSerializer(project, many=True)
         return Response(serialized_project.data, status=status.HTTP_200_OK)
 
+    def post(self, request):
+        request.data['owner'] = request.user.id
+        new_project = ProjectSerializer(data=request.data)
+        if new_project.is_valid():
+            new_project.save()
+            return Response(new_project.data, status=status.HTTP_201_CREATED)
+        return Response(new_project.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)    
+
 class ProjectDetailView(APIView):
 
     def get_artist(self, pk):
@@ -29,4 +37,4 @@ class ProjectDetailView(APIView):
             serialized_project = ProjectSerializer(project)
             return Response(serialized_project.data,status=status.HTTP_200_OK) # send the JSON to the client 
         except Project.DoesNotExist:
-            raise NotFound()
+            raise NotFound()       

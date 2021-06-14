@@ -8,9 +8,9 @@ class Project_type(models.Model):
 
 class Project(models.Model):
     project_name = models.CharField(max_length=25)
-    Url = models.CharField(max_length=300)
+    url = models.CharField(max_length=300)
     project_type = models.ManyToManyField(
-        Project_type,
+        'Project_type',
         related_name='project',
         blank=True
     )
