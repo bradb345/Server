@@ -4,11 +4,11 @@ class Project_type(models.Model):
     type = models.CharField(max_length=25)
 
     def __str__(self):
-        return f'{self.type}'
+        return f'{self.type} on {self.Project}'
 
 class Project(models.Model):
     project_name = models.CharField(max_length=25)
-    Url = models.CharField(max_length=300)
+    url = models.CharField(max_length=300)
     project_type = models.ManyToManyField(
         Project_type,
         related_name='project',
