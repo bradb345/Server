@@ -1,4 +1,13 @@
 {
   "python.linting.pylintEnabled": true,
-  "python.pythonPath": "/Users/craigclement/.local/share/virtualenvs/Server-cJ78okgl/bin/python"
+  "python.pythonPath": "/Users/bradleybernard/.local/share/virtualenvs/Server-XhGlqJF5/bin/python",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#bf4747",
+    "titleBar.activeBackground": "#bf4747",
+    "titleBar.inactiveBackground": "#bf4747",
+    "statusBar.foreground": "#000",
+    "titleBar.inactiveForeground": "#000",
+    "titleBar.activeForeground": "#000",
+  },
+  "window.title": "Backend-Project_expo"
 }
