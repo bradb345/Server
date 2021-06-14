@@ -1,9 +1,15 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
-from .models import Project, Comment, Project_type
+from .models import Project, Comment, ProjectType
 
 User = get_user_model()
 
+
+class ProjectTypeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ProjectType
+        fields = '__all__'
 
 class UserSerializer(serializers.ModelSerializer):
 
@@ -28,5 +34,6 @@ class PopulatedCommentSerializer(CommentSerializer):
 
 class PopulatedProjectSerializer(ProjectSerializer):
     comments = CommentSerializer(many=True)
-    favorited_by = UserSerializer(many=True)
+    # favorited_by = UserSerializer(many=True)
+    project_type = ProjectTypeSerializer(many=True)
     owner = UserSerializer()

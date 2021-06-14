@@ -6,13 +6,13 @@ from rest_framework import status
 from rest_framework.exceptions import NotFound
 
 from .models import Project
-from .serializers import ProjectSerializer
+from .serializers import ProjectSerializer, PopulatedProjectSerializer
 
 class ProjectListView(APIView):
 
     def get(self, _request):
         project = Project.objects.all()
-        serialized_project = ProjectSerializer(project, many=True)
+        serialized_project = PopulatedProjectSerializer(project, many=True)
         return Response(serialized_project.data, status=status.HTTP_200_OK)
 
     def post(self, request):
@@ -34,7 +34,7 @@ class ProjectDetailView(APIView):
     def get(self, _request, pk):
         try :
             project = Project.objects.get(pk=pk) # get a artist by id (pk means primary key)
-            serialized_project = ProjectSerializer(project)
+            serialized_project = PopulatedProjectSerializer(project)
             return Response(serialized_project.data,status=status.HTTP_200_OK) # send the JSON to the client 
         except Project.DoesNotExist:
             raise NotFound()       
