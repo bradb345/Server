@@ -12,3 +12,5 @@ class ProjectListView(APIView):
         project = Project.objects.all()
         serialized_project = ProjectSerializer(project, many=True)
         return Response(serialized_project.data, status=status.HTTP_200_OK)
+
+    
