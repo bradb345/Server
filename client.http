@@ -1,1 +1,17 @@
-GET http://localhost:8000/api/projects/
+@url=http://localhost:8000/api/
+
+GET {{url}}projects/
+
+###
+
+GET {{url}}projects/1
+
+
+###
+
+DELETE {{url}}projects/5
+
+
+
+
+
