@@ -6,11 +6,7 @@ GET {{url}}projects/
 ###
 
 #GET A SINGLE PROJECT
-<<<<<<< HEAD
-GET {{url}}projects/2/
-=======
 GET {{url}}projects/1/
->>>>>>> development
 
 
 ###
@@ -58,11 +54,7 @@ content-type:application/json
 ###
 #MAKE A COMMENT
 
-<<<<<<< HEAD
-POST {{url}}projects/2/comments/
-=======
 POST {{url}}projects/1/comments/
->>>>>>> development
 content-type: application/json
 Authorization: Bearer {{token}}
 
@@ -73,11 +65,7 @@ Authorization: Bearer {{token}}
 ###
 #DELETE COMMENT
 
-<<<<<<< HEAD
-DELETE  {{url}}projects/8/comments/9/
-=======
 DELETE  {{url}}projects/1/comments/1/
->>>>>>> development
 content-type: application/json
 Authorization: Bearer {{token}}
 
