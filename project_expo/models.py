@@ -14,6 +14,12 @@ class Project(models.Model):
         related_name='project',
         blank=True
     )
+    favorited_by = models.ManyToManyField(
+        'jwt_auth.User',
+        related_name='favorites',
+        blank= True
+        ### ? no delete functionalities for many to many relationships
+    )
     owner = models.ForeignKey(
         'jwt_auth.User',
         related_name='created_projects',
