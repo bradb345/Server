@@ -1,20 +1,20 @@
 @url=http://localhost:8000/api/
-@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUsImV4cCI6MTYyNDI5MDI2NH0.ZvsqMPawOhFrdEYKZXhsedFPQpoZcgPFxmx6GnosO0w
+@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImV4cCI6MTYyNDI5OTUzNX0.qOyxTJDXjf_CGwhKOINxRVfUrPuFQkVdDOVCEw4ILC4
 #GET ALL PROJECTS
 GET {{url}}projects/
 
 ###
 
 #GET A SINGLE PROJECT
-GET {{url}}projects/4/
+GET {{url}}projects/2/
 
 
 ###
 
 #DELETE A PROJECT
-DELETE {{url}}projects/5/
+DELETE {{url}}projects/7/
 content-type: application/json
-Authorization: Bearer{{token}}
+Authorization: Bearer {{token}}
 
 ###
 
@@ -25,7 +25,8 @@ Authorization: Bearer {{token}}
 
 {
   "projectName":"new Project10",
-  "url":"http://www.google.com"
+  "url":"http://www.google.com",
+  "projectType": [4]
 }
 
 
@@ -35,8 +36,8 @@ POST {{url}}auth/register/
 content-type:application/json
 
 {
-"username":"clem",
-"email":"clem@mail.com",
+"username":"brad",
+"email":"brad@email.com",
 "password":"pass",
 "passwordConfirmation":"pass"
 }
@@ -47,20 +48,28 @@ POST {{url}}auth/login/
 content-type:application/json
 
 {
-  "email":"clem@mail.com",
+  "email":"brad@email.com",
   "password":"pass"
 }
 
 ###
 #MAKE A COMMENT 
 
-POST {{url}}projects/4/comments/
+POST {{url}}projects/2/comments/
 content-type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "content":"this is a comment to test before i push!"
+  "content":"this is a comment that im gonna delete (craig)"
 }
+
+###
+#DELETE COMMENT
+
+DELETE  {{url}}projects/8/comments/9/
+content-type: application/json
+Authorization: Bearer {{token}}
+
 
 
 
