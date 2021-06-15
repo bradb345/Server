@@ -1,18 +1,22 @@
 @url=http://localhost:8000/api/
-@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImV4cCI6MTYyNDI5OTUzNX0.qOyxTJDXjf_CGwhKOINxRVfUrPuFQkVdDOVCEw4ILC4
+@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYyNDM1NDg5MX0.jin2IZzwTgdzld-8EnfqBC0pUYbibxv8O2I_h0KPUNY
 #GET ALL PROJECTS
 GET {{url}}projects/
 
 ###
 
 #GET A SINGLE PROJECT
+<<<<<<< HEAD
 GET {{url}}projects/2/
+=======
+GET {{url}}projects/1/
+>>>>>>> development
 
 
 ###
 
 #DELETE A PROJECT
-DELETE {{url}}projects/7/
+DELETE {{url}}projects/1/
 content-type: application/json
 Authorization: Bearer {{token}}
 
@@ -24,9 +28,8 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "projectName":"new Project10",
-  "url":"http://www.google.com",
-  "projectType": [4]
+  "projectName":"new Project122",
+  "url":"http://www.google.com"
 }
 
 
@@ -36,8 +39,8 @@ POST {{url}}auth/register/
 content-type:application/json
 
 {
-"username":"brad",
-"email":"brad@email.com",
+"username":"g",
+"email":"g@email.com",
 "password":"pass",
 "passwordConfirmation":"pass"
 }
@@ -48,14 +51,18 @@ POST {{url}}auth/login/
 content-type:application/json
 
 {
-  "email":"brad@email.com",
+  "email":"g@email.com",
   "password":"pass"
 }
 
 ###
-#MAKE A COMMENT 
+#MAKE A COMMENT
 
+<<<<<<< HEAD
 POST {{url}}projects/2/comments/
+=======
+POST {{url}}projects/1/comments/
+>>>>>>> development
 content-type: application/json
 Authorization: Bearer {{token}}
 
@@ -66,11 +73,18 @@ Authorization: Bearer {{token}}
 ###
 #DELETE COMMENT
 
+<<<<<<< HEAD
 DELETE  {{url}}projects/8/comments/9/
+=======
+DELETE  {{url}}projects/1/comments/1/
+>>>>>>> development
 content-type: application/json
 Authorization: Bearer {{token}}
 
-
+###
+POST {{url}}projects/2/favorite/
+content-type: application/json
+Authorization: Bearer {{token}}
 
 
 

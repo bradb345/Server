@@ -1,3 +1,4 @@
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -20,7 +21,7 @@ class ProjectListView(APIView):
         if new_project.is_valid():
             new_project.save()
             return Response(new_project.data, status=status.HTTP_201_CREATED)
-        return Response(new_project.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)    
+        return Response(new_project.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 class ProjectDetailView(APIView):
 
@@ -32,9 +33,9 @@ class ProjectDetailView(APIView):
 
     def get(self, _request, pk):
         try :
-            project = Project.objects.get(pk=pk) 
+            project = Project.objects.get(pk=pk)
             serialized_project = PopulatedProjectSerializer(project)
-            return Response(serialized_project.data,status=status.HTTP_200_OK) 
+            return Response(serialized_project.data,status=status.HTTP_200_OK)
         except Project.DoesNotExist:
             raise NotFound()
 
@@ -68,4 +69,21 @@ class CommentDetailView(APIView):
             comment_to_delete.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Comment.DoesNotExist:
+            raise NotFound()
+
+class ProjectFavoriteView(APIView):
+
+    permission_classes = (IsAuthenticated, )
+
+    def post(self, request, pk):
+        try:
+            project_to_favorite = Project.objects.get(pk=pk)
+            if request.user in project_to_favorite.favorited_by.all():
+                project_to_favorite.favorited_by.remove(request.user.id)
+            else:
+                project_to_favorite.favorited_by.add(request.user.id)
+            project_to_favorite.save()
+            serialized_project = PopulatedProjectSerializer(project_to_favorite)
+            return Response(serialized_project.data, status=status.HTTP_202_ACCEPTED)
+        except Project.DoesNotExist:
             raise NotFound()
