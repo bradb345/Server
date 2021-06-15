@@ -6,7 +6,7 @@ from rest_framework.exceptions import NotFound
 from rest_framework.permissions import IsAuthenticated
 
 from .models import Project, Comment
-from .serializers import ProjectSerializer, PopulatedProjectSerializer, PopulatedCommentSerializer
+from .serializers import ProjectSerializer, PopulatedProjectSerializer, CommentSerializer
 
 class ProjectListView(APIView):
 
@@ -46,7 +46,7 @@ class CommentListView(APIView):
         def post(self, request, project_pk):
             request.data['project'] = project_pk
             request.data['owner'] = request.user.id
-            serialized_comment = PopulatedCommentSerializer(data=request.data)
+            serialized_comment = CommentSerializer(data=request.data)
             if serialized_comment.is_valid():
                 serialized_comment.save()
                 return Response(serialized_comment.data, status=status.HTTP_201_CREATED)
