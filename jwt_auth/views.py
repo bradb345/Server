@@ -55,3 +55,4 @@ class ProfileView(APIView):
             return Response(serialized_user.data, status=status.HTTP_200_OK)
         except User.DoesNotExist:
             raise NotFound()
+            

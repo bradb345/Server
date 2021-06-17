@@ -88,7 +88,7 @@ Authorization: Bearer {{token}}
 ###
 #GET A SINGLE USER
 
-GET {{url}}auth/profile/
+GET {{url}}auth/profile/3/
 
 
 
