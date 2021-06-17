@@ -1,5 +1,5 @@
 @url=http://localhost:8000/api/
-@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYyNDM1NDg5MX0.jin2IZzwTgdzld-8EnfqBC0pUYbibxv8O2I_h0KPUNY
+@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImV4cCI6MTYyNDUyNDM1MX0.jJJoKEJzKU6-w6EHL8phmkTek0Khg57moUlp_Lc8Pw0
 #GET ALL PROJECTS
 GET {{url}}projects/
 
@@ -24,7 +24,7 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "projectName":"new Project122",
+  "projectName":"TEST",
   "url":"http://www.google.com"
 }
 
@@ -35,8 +35,8 @@ POST {{url}}auth/register/
 content-type:application/json
 
 {
-"username":"g",
-"email":"g@email.com",
+"username":"tesforuse",
+"email":"user@email.com",
 "password":"pass",
 "passwordConfirmation":"pass"
 }
@@ -47,7 +47,7 @@ POST {{url}}auth/login/
 content-type:application/json
 
 {
-  "email":"g@email.com",
+  "email":"user@email.com",
   "password":"pass"
 }
 
@@ -73,6 +73,11 @@ Authorization: Bearer {{token}}
 POST {{url}}projects/2/favorite/
 content-type: application/json
 Authorization: Bearer {{token}}
+
+###
+#GET A SINGLE USER
+
+GET {{url}}auth/profile/
 
 
 
