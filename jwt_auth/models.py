@@ -10,4 +10,5 @@ class User(AbstractUser):
     Instagram = models.CharField(max_length=250, blank=True)
     Twitter = models.CharField(max_length=250, blank=True)
     personal_site= models.CharField(max_length=250, blank=True)
+    created_project = models.CharField(max_length= 250, blank=True)
 

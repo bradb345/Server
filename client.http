@@ -1,5 +1,5 @@
 @url=http://localhost:8000/api/
-@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYyNDQ1OTQ1Mn0.sIS30Yad4aDBh247Udz1tPp86c1LAekhk-Hc254Dt9A
+@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImV4cCI6MTYyNDUyNDM1MX0.jJJoKEJzKU6-w6EHL8phmkTek0Khg57moUlp_Lc8Pw0
 #GET ALL PROJECTS
 GET {{url}}projects/
 
@@ -24,7 +24,7 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "projectName":"new Project122",
+  "projectName":"TEST",
   "url":"http://www.google.com"
 }
 
@@ -36,7 +36,7 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 {
-  
+
 }
 
 
@@ -46,8 +46,8 @@ POST {{url}}auth/register/
 content-type:application/json
 
 {
-"username":"g",
-"email":"g@email.com",
+"username":"tesforuse",
+"email":"user@email.com",
 "password":"pass",
 "passwordConfirmation":"pass"
 }
@@ -58,7 +58,7 @@ POST {{url}}auth/login/
 content-type:application/json
 
 {
-  "email":"g@email.com",
+  "email":"user@email.com",
   "password":"pass"
 }
 
@@ -70,7 +70,7 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "content":"this is a comment that im gonna delete"
+  "content":"this is a comment that im gonna delete (craig)"
 }
 
 ###
@@ -84,6 +84,11 @@ Authorization: Bearer {{token}}
 POST {{url}}projects/2/favorite/
 content-type: application/json
 Authorization: Bearer {{token}}
+
+###
+#GET A SINGLE USER
+
+GET {{url}}auth/profile/
 
 
 
