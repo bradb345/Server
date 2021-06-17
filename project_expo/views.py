@@ -46,6 +46,15 @@ class ProjectDetailView(APIView):
         project_to_delete.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+    def put(self, request, pk):
+        request.data['owner'] = request.user.id
+        project_to_update = self.get_project(pk=pk)
+        updated_project = ProjectSerializer(project_to_update, data=request.data)
+        if updated_project.is_valid():
+            updated_project.save()
+            return Response(updated_project.data, status=status.HTTP_202_ACCEPTED)
+        return Response(updated_project.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
 class CommentListView(APIView):
 
     permission_classes = (IsAuthenticated, )
