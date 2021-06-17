@@ -1,12 +1,12 @@
 @url=http://localhost:8000/api/
-@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImV4cCI6MTYyNDUyNDM1MX0.jJJoKEJzKU6-w6EHL8phmkTek0Khg57moUlp_Lc8Pw0
+@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImV4cCI6MTYyNDU1MjY1Nn0.dXM0xo1u6aphx4SgLlem1ah50J33DMJ4XgvM_JsGU2U
 #GET ALL PROJECTS
 GET {{url}}projects/
 
 ###
 
 #GET A SINGLE PROJECT
-GET {{url}}projects/1/
+GET {{url}}projects/2/
 
 
 ###
@@ -17,6 +17,16 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 ###
+PUT {{url}}projects/8/
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "projectName":"TESTING",
+  "url":"http://www.google.com/Interesting"
+}
+
+###
 
 #CREATE A PROJECT
 POST {{url}}projects/
@@ -24,8 +34,19 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "projectName":"TEST",
+  "projectName":"TEST12",
   "url":"http://www.google.com"
+}
+
+###
+
+#CREATE A PROJECT
+POST {{url}}projects/
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+
 }
 
 
