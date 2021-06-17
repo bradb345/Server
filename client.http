@@ -69,7 +69,7 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "content":"this is a comment that im gonna delete"
+  "content":"this is a comment that im gonna delete (craig)"
 }
 
 ###
@@ -86,12 +86,9 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 ###
+#GET A SINGLE USER
 
-#get single user
-
-GET {{url}}/profile/3/
-
-
+GET {{url}}auth/profile/
 
 
 
