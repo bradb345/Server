@@ -17,6 +17,16 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 ###
+PUT {{url}}projects/8/
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "projectName":"TESTING",
+  "url":"http://www.google.com/Interesting"
+}
+
+###
 
 #CREATE A PROJECT
 POST {{url}}projects/
