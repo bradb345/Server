@@ -6,7 +6,7 @@ GET {{url}}projects/
 ###
 
 #GET A SINGLE PROJECT
-GET {{url}}projects/13/
+GET {{url}}projects/10/
 
 
 ###
