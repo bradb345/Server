@@ -3,12 +3,14 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import NotFound, PermissionDenied
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 
 from .models import Project, Comment
 from .serializers import ProjectSerializer, PopulatedProjectSerializer, CommentSerializer
 
 class ProjectListView(APIView):
+
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
     def get(self, _request):
         project = Project.objects.all()
@@ -25,6 +27,8 @@ class ProjectListView(APIView):
 
 class ProjectDetailView(APIView):
 
+    # permission_classes = (IsAuthenticatedOrReadOnly, )
+
     def get_project(self, pk):
         try :
             return Project.objects.get(pk=pk)
@@ -32,12 +36,10 @@ class ProjectDetailView(APIView):
             raise NotFound()
 
     def get(self, _request, pk):
-        try :
-            project = Project.objects.get(pk=pk)
-            serialized_project = PopulatedProjectSerializer(project)
-            return Response(serialized_project.data,status=status.HTTP_200_OK)
-        except Project.DoesNotExist:
-            raise NotFound()
+        project = self.get_project(pk=pk)
+        serialized_project = PopulatedProjectSerializer(project)
+        return Response(serialized_project.data, status=status.HTTP_200_OK)
+
 
     def delete(self, request, pk):
         project_to_delete = self.get_project(pk=pk)

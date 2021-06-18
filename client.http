@@ -6,7 +6,7 @@ GET {{url}}projects/
 ###
 
 #GET A SINGLE PROJECT
-GET {{url}}projects/8/
+GET {{url}}projects/13/
 
 
 ###
@@ -17,7 +17,7 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 ###
-PUT {{url}}projects/8/
+PUT {{url}}projects/13/
 content-type: application/json
 Authorization: Bearer {{token}}
 
