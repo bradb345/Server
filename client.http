@@ -1,23 +1,23 @@
 @url=http://localhost:8000/api/
-@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImV4cCI6MTYyNDU1MjY1Nn0.dXM0xo1u6aphx4SgLlem1ah50J33DMJ4XgvM_JsGU2U
+@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImV4cCI6MTYyNDQ0MDM0N30.lmfUYUgCs3GSYT0XTTf7nulOHxpj6ycXTpLCzsuw4D0
 #GET ALL PROJECTS
 GET {{url}}projects/
 
 ###
 
 #GET A SINGLE PROJECT
-GET {{url}}projects/2/
+GET {{url}}projects/13/
 
 
 ###
 
 #DELETE A PROJECT
-DELETE {{url}}projects/1/
+DELETE {{url}}projects/9/
 content-type: application/json
 Authorization: Bearer {{token}}
 
 ###
-PUT {{url}}projects/8/
+PUT {{url}}projects/13/
 content-type: application/json
 Authorization: Bearer {{token}}
 
@@ -34,10 +34,9 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "projectName":"TEST12",
-  "url":"http://www.google.com"
+  "projectName":"project 1",
+  "url":"https://bradb345.github.io/project-1/"
 }
-
 ###
 
 #CREATE A PROJECT
@@ -46,9 +45,9 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 {
-
+  "projectName":"project 2",
+  "url":"https://project2-sei55-heros.netlify.app/"
 }
-
 
 ###
 #CREATE A NEW USER
@@ -56,8 +55,8 @@ POST {{url}}auth/register/
 content-type:application/json
 
 {
-"username":"tesforuse",
-"email":"user@email.com",
+"username":"brad",
+"email":"brad@email.com",
 "password":"pass",
 "passwordConfirmation":"pass"
 }
@@ -68,7 +67,7 @@ POST {{url}}auth/login/
 content-type:application/json
 
 {
-  "email":"user@email.com",
+  "email":"brad@email.com",
   "password":"pass"
 }
 
@@ -91,14 +90,15 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 ###
-POST {{url}}projects/2/favorite/
+#FAVORITE
+POST {{url}}projects/8/favorite/
 content-type: application/json
 Authorization: Bearer {{token}}
 
 ###
 #GET A SINGLE USER
 
-GET {{url}}auth/profile/1/
+GET {{url}}auth/profile/3/
 
 
 

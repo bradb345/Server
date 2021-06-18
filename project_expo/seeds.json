@@ -1,130 +1,21 @@
 [
 {
   "model": "project_expo.projecttype",
-  "pk": 2,
-  "fields": {
-    "type": "django"
-  }
-},
-{
-  "model": "project_expo.projecttype",
-  "pk": 3,
-  "fields": {
-    "type": "python"
-  }
-},
-{
-  "model": "project_expo.project",
-  "pk": 1,
-  "fields": {
-    "project_name": "craigs second project",
-    "url": "\"url\"",
-    "owner": 4,
-    "project_type": [
-      2
-    ]
-  }
-},
-{
-  "model": "project_expo.project",
-  "pk": 2,
-  "fields": {
-    "project_name": "project 3 CC",
-    "url": "test",
-    "owner": 4,
-    "project_type": []
-  }
-},
-{
-  "model": "project_expo.project",
-  "pk": 3,
-  "fields": {
-    "project_name": "new Project",
-    "url": "http://www.google.com",
-    "owner": 4,
-    "project_type": []
-  }
-},
-{
-  "model": "project_expo.project",
   "pk": 4,
+  "fields": {
+    "type": "game"
+  }
+},
+{
+  "model": "project_expo.project",
+  "pk": 8,
   "fields": {
     "project_name": "new Project10",
     "url": "http://www.google.com",
-    "owner": 5,
-    "project_type": []
-  }
-},
-{
-  "model": "project_expo.comment",
-  "pk": 1,
-  "fields": {
-    "content": "what a project!",
-    "project": 1,
-    "owner": 1
-  }
-},
-{
-  "model": "project_expo.comment",
-  "pk": 2,
-  "fields": {
-    "content": "this is a comment",
-    "project": 4,
-    "owner": 5
-  }
-},
-{
-  "model": "project_expo.comment",
-  "pk": 3,
-  "fields": {
-    "content": "this is a comment",
-    "project": 4,
-    "owner": 5
-  }
-},
-{
-  "model": "project_expo.comment",
-  "pk": 4,
-  "fields": {
-    "content": "this is a comment",
-    "project": 4,
-    "owner": 5
-  }
-},
-{
-  "model": "project_expo.comment",
-  "pk": 5,
-  "fields": {
-    "content": "this is a comment",
-    "project": 4,
-    "owner": 5
-  }
-},
-{
-  "model": "project_expo.comment",
-  "pk": 6,
-  "fields": {
-    "content": "this is a comment that may be right!",
-    "project": 4,
-    "owner": 5
-  }
-},
-{
-  "model": "project_expo.comment",
-  "pk": 7,
-  "fields": {
-    "content": "this is a comment to test before i push!",
-    "project": 4,
-    "owner": 5
-  }
-},
-{
-  "model": "project_expo.comment",
-  "pk": 8,
-  "fields": {
-    "content": "this is a comment to test before i push!",
-    "project": 4,
-    "owner": 5
+    "owner": 3,
+    "project_type": [
+      4
+    ]
   }
 }
 ]
