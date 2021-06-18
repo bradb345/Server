@@ -19,5 +19,6 @@ class PopulatedUserSerializer(ModelSerializer):
             'email',
             'favorites',
             'comments',
-            'created_project'
+            'created_project',
+        
         )
