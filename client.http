@@ -100,6 +100,11 @@ Authorization: Bearer {{token}}
 
 GET {{url}}auth/profile/13/
 
+###
+#GET ALL USERS 
+
+GET {{url}}auth/profile/
+
 
 
 

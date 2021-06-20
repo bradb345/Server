@@ -48,7 +48,7 @@ class LoginView(APIView):
             {'token': token, 'message': f'Welcome back {user_to_login.username}'}
         )
 
-class ProfileView(APIView):
+class ProfileDetailView(APIView):
     def get(self, _request, pk):
         try:
             user = User.objects.get(pk=pk)
@@ -57,3 +57,8 @@ class ProfileView(APIView):
         except User.DoesNotExist:
             raise NotFound()
             
+class ProfileView(APIView):
+    def get(self, _request):
+        user = User.objects.all()
+        serialized_user = PopulatedUserSerializer(user, many=True)
+        return Response(serialized_user.data, status=status.HTTP_200_OK)
