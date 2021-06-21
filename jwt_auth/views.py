@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import PermissionDenied, NotFound
-from rest_framework import status
+from rest_framework import serializers, status
 from django.contrib.auth import get_user_model
 from django.conf import settings
 import jwt
@@ -56,4 +56,13 @@ class ProfileView(APIView):
             return Response(serialized_user.data, status=status.HTTP_200_OK)
         except User.DoesNotExist:
             raise NotFound()
-            
+
+    def put(self, request, pk):
+        request.data['owner'] = request.user.id
+        user_to_update = User.objects.get(pk=pk)
+        updated_user = UserSerializer(user_to_update, data=request.data)
+        if updated_user.is_valid():
+            updated_user.save()
+            return Response(updated_user.data, status=status.HTTP_202_ACCEPTED)
+        return Response(updated_user.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+

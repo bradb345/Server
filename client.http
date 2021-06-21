@@ -1,5 +1,5 @@
 @url=http://localhost:8000/api/
-@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImV4cCI6MTYyNDQ0MDM0N30.lmfUYUgCs3GSYT0XTTf7nulOHxpj6ycXTpLCzsuw4D0
+@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUsImV4cCI6MTYyNDYzMzI3NX0.pMc6eI_9bpka44_rHPWMEoR8QEqsEml9FfrM4l8MMLw
 #GET ALL PROJECTS
 GET {{url}}projects/
 
@@ -98,7 +98,31 @@ Authorization: Bearer {{token}}
 ###
 #GET A SINGLE USER
 
-GET {{url}}auth/profile/13/
+GET {{url}}auth/profile/5/
+
+###
+PUT {{url}}auth/profile/5/
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": 5,
+  "username": "bradley",
+  "password": "pass",
+  "passwordConfirmation": "pass",
+  "profileImage": "https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png",
+  "email": "brad@email.com",
+  "favorites": [],
+  "comments": [],
+  "createdProject": "",
+  "gacohort": "",
+  "linkedin": "",
+  "github": "",
+  "twitter": "",
+  "personalsite": "",
+  "instagram": "instagram"
+}
+
 
 
 
