@@ -10,7 +10,7 @@ class PopulatedUserSerializer(ModelSerializer):
     favorites = ProjectSerializer(many=True)
     comments = CommentSerializer(many=True)
     created_project = ProjectSerializer(many=True)
-    
+
 
     class Meta:
         model = User
@@ -27,5 +27,6 @@ class PopulatedUserSerializer(ModelSerializer):
             'github',
             'twitter',
             'personalsite',
-            'instagram'
+            'instagram',
+            'job_title'
         )
