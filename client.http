@@ -124,6 +124,11 @@ Authorization: Bearer {{token}}
 }
 
 
+###
+#GET ALL USERS 
+
+GET {{url}}auth/profile/
+
 
 
 
