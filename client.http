@@ -1,5 +1,5 @@
 @url=http://localhost:8000/api/
-@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImV4cCI6MTYyNDQ0MDM0N30.lmfUYUgCs3GSYT0XTTf7nulOHxpj6ycXTpLCzsuw4D0
+@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImV4cCI6MTYyNDg3ODc3NX0.wbJg7LLNwf08T1rgaeyPxbYGUbLW9eRkM4j_vvrpdOQ
 #GET ALL PROJECTS
 GET {{url}}projects/
 
@@ -67,8 +67,8 @@ POST {{url}}auth/login/
 content-type:application/json
 
 {
-  "email":"brad@email.com",
-  "password":"pass"
+  "email":"admin@email.com",
+  "password":"admin"
 }
 
 ###
@@ -98,10 +98,34 @@ Authorization: Bearer {{token}}
 ###
 #GET A SINGLE USER
 
-GET {{url}}auth/profile/13/
+GET {{url}}auth/profile/2/
 
 ###
-#GET ALL USERS 
+PUT {{url}}auth/profile/2/
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "username": "admin",
+  "password": "admin",
+  "passwordConfirmation": "admin",
+  "profileImage": "https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png",
+  "email": "admin@email.com",
+  "favorites": [],
+  "comments": [],
+  "createdProject": "",
+  "gacohort": "",
+  "linkedin": "",
+  "github": "",
+  "twitter": "",
+  "personalsite": "",
+  "instagram": "instagram",
+  "jobTitle": "Engineer"
+}
+
+
+###
+#GET ALL USERS
 
 GET {{url}}auth/profile/
 
