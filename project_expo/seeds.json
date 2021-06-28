@@ -7,15 +7,190 @@
   }
 },
 {
-  "model": "project_expo.project",
+  "model": "project_expo.projecttype",
+  "pk": 6,
+  "fields": {
+    "type": "python"
+  }
+},
+{
+  "model": "project_expo.projecttype",
+  "pk": 7,
+  "fields": {
+    "type": "django"
+  }
+},
+{
+  "model": "project_expo.projecttype",
   "pk": 8,
   "fields": {
-    "project_name": "new Project10",
-    "url": "http://www.google.com",
+    "type": "backend"
+  }
+},
+{
+  "model": "project_expo.project",
+  "pk": 10,
+  "fields": {
+    "project_name": "new Project122",
+    "url": "https://github.com/bradb345",
     "owner": 3,
     "project_type": [
       4
+    ],
+    "favorited_by": [
+      6,
+      3
     ]
+  }
+},
+{
+  "model": "project_expo.project",
+  "pk": 11,
+  "fields": {
+    "project_name": "project 1",
+    "url": "https://bradb345.github.io/project-1/",
+    "owner": 3,
+    "project_type": [],
+    "favorited_by": [
+      6,
+      3
+    ]
+  }
+},
+{
+  "model": "project_expo.project",
+  "pk": 12,
+  "fields": {
+    "project_name": "project 2",
+    "url": "https://project2-sei55-heros.netlify.app/",
+    "owner": 3,
+    "project_type": [],
+    "favorited_by": [
+      6,
+      3
+    ]
+  }
+},
+{
+  "model": "project_expo.project",
+  "pk": 13,
+  "fields": {
+    "project_name": "TESTING",
+    "url": "http://www.google.com/Interesting",
+    "owner": 3,
+    "project_type": [],
+    "favorited_by": []
+  }
+},
+{
+  "model": "project_expo.project",
+  "pk": 14,
+  "fields": {
+    "project_name": "thest 3",
+    "url": "https://ga-react-punk-api.netlify.app/",
+    "owner": 6,
+    "project_type": [],
+    "favorited_by": [
+      6
+    ]
+  }
+},
+{
+  "model": "project_expo.project",
+  "pk": 25,
+  "fields": {
+    "project_name": "magazine",
+    "url": "http://thrashermagazine.com/",
+    "owner": 8,
+    "project_type": [],
+    "favorited_by": [
+      3
+    ]
+  }
+},
+{
+  "model": "project_expo.project",
+  "pk": 26,
+  "fields": {
+    "project_name": "high focus",
+    "url": "http://high-focus.com/",
+    "owner": 8,
+    "project_type": [],
+    "favorited_by": [
+      3
+    ]
+  }
+},
+{
+  "model": "project_expo.project",
+  "pk": 27,
+  "fields": {
+    "project_name": "dillas delight",
+    "url": "http://dillasdelights.com/",
+    "owner": 8,
+    "project_type": [],
+    "favorited_by": [
+      3
+    ]
+  }
+},
+{
+  "model": "project_expo.project",
+  "pk": 28,
+  "fields": {
+    "project_name": "stock photos",
+    "url": "https://www.shutterstock.com/discover/stock-assets-uk-0220?kw=stock%20picture&c3apidt=p11180843160&gclid=Cj0KCQjwlMaGBhD3ARIsAPvWd6gCOeackXsY21U_366g_S5QmnltGSY0X4mGgZGwMMgA9ksyUvpZ5m4aAjFOEALw_wcB&gclsrc=aw.ds",
+    "owner": 7,
+    "project_type": [],
+    "favorited_by": [
+      3
+    ]
+  }
+},
+{
+  "model": "project_expo.project",
+  "pk": 29,
+  "fields": {
+    "project_name": "photos",
+    "url": "https://www.pexels.com/search/profile/",
+    "owner": 7,
+    "project_type": [],
+    "favorited_by": [
+      3
+    ]
+  }
+},
+{
+  "model": "project_expo.project",
+  "pk": 32,
+  "fields": {
+    "project_name": "memes",
+    "url": "https://memes.com/",
+    "owner": 9,
+    "project_type": [],
+    "favorited_by": []
+  }
+},
+{
+  "model": "project_expo.project",
+  "pk": 33,
+  "fields": {
+    "project_name": "more memes",
+    "url": "https://www.lifewire.com/what-is-a-meme-2483702",
+    "owner": 9,
+    "project_type": [],
+    "favorited_by": []
+  }
+},
+{
+  "model": "project_expo.project",
+  "pk": 34,
+  "fields": {
+    "project_name": "oh look a meme`",
+    "url": "https://www.thrillist.com/entertainment/nation/best-memes-of-all-time",
+    "owner": 9,
+    "project_type": [],
+    "favorited_by": []
   }
 }
 ]
