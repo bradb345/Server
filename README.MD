@@ -426,4 +426,23 @@ Registered Main feed
 Profile feed
 ![profile](images/profile.png)
 
+### Wins and Challenges 
 
+#### - Challenges
+
+- Wrapping my head around Django was the main challenge of this project.
+- This being the first project using python was another challenge as well.
+
+#### - Wins
+
+-  Coming away with a better understanding of Python and its similarity with JavaScript.
+
+
+### Key Learning
+
+- Django stack work flow.
+- python
+- Table interaction
+
+### Future Improvements 
+- I’m currently in the process of re-styling the entire website. I plan to utilize Material-UI to make the site look more professional. 
