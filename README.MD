@@ -13,24 +13,23 @@ All groups were given a week to create a fullstack app using a custom build Back
     -   Django
     -   PostgreSQL
     -   Python
-    -   Backend API  [here](https://peekback.herokuapp.com/api)
+    -   Backend API  [here](https://expoback.herokuapp.com/)
 
 -   **Front-End**:
     
-    -   CSS3 + SASS
+    -   CSS + SASS
     -   HTML5
     -   JavaScript (ES6)
     -   React.js
-    -  Google Fonts
-    - fort awesome
+    -   Google Fonts
+    -   fort awesome
     
 -   **Dependencies**:
     
     -   Axios
-    -   bcrypt
-    -   pyjwt
-    -   pip
-    -   react-router-dom
+    -   Pyjwt
+    -   Pip
+    -   Peact-router-dom
 
 -   **Development Tools**:
     -   Git + GitHub
@@ -38,9 +37,9 @@ All groups were given a week to create a fullstack app using a custom build Back
     -   VS Code
 
 ## Deployment 
-- click [here](https://peek3.netlify.app) to see the deployed App.
-- click [here](https://github.com/bradb345/project-3-server) to see the Server Github repository
-- click [here](https://github.com/bradb345/project-3-client) to see the Client Github repository
+- click [here](https://project-expo.netlify.app/) to see the deployed App.
+- click [here](https://github.com/bradb345/Server) to see the Server Github repository
+- click [here](https://github.com/bradb345/Client) to see the Client Github repository
 
 ## Members
 
@@ -51,6 +50,7 @@ All groups were given a week to create a fullstack app using a custom build Back
 ## Approach
 
 - After a short brainstorming session we decided to create a Social Media App called “Project Expo”. It would be a place where General Assembly students could showcase their projects and serve as a one stop shop portfolio site. 
+
 
 
 ### - Backend
@@ -290,7 +290,7 @@ class ProfileView(APIView):
 
 #### Feeds
 
-- -   For the projects, I made a try catch async function that makes a GET request to the backend server to get all the projects. after awaiting the request, If the request was successful I set the response data to state, if the request failed I set the isError state to true. If there was no error but the projects state is still null, then that means that isLoading is true. if any of these states and constants are true then a message is conditionally rendered to the page.
+-  For the projects, I made a try catch async function that makes a GET request to the backend server to get all the projects. after awaiting the request, If the request was successful I set the response data to state, if the request failed I set the isError state to true. If there was no error but the projects state is still null, then that means that isLoading is true. If any of these states and constants are true then a message is conditionally rendered to the page.
 
 ```js
 const [projects, setProjects] = React.useState(null)
@@ -440,9 +440,13 @@ Profile feed
 
 ### Key Learning
 
-- Django stack work flow.
-- python
-- Table interaction
+- Django is a great tool for building responsive, fuctional websites fast. It really cut down the amout of code you write.
+- When I started GA I was hoping that we would learn Python. So when we started this project I was excited to learn the language. 
+- Before this project I never worked with postgreSQL Tables. It was difficult wrapping my head around the relationships between different tables, but by the end of the project I believe I have a better understanding of how they interact.  
 
 ### Future Improvements 
 - I’m currently in the process of re-styling the entire website. I plan to utilize Material-UI to make the site look more professional. 
+
+### Bugs
+
+- The site calls multiple different sites all at once upon loading. This could slow the site loading speed, especially if the site grows in users. I need to figure out how to load the projects to the page as needed. 
