@@ -452,6 +452,9 @@ Profile feed
 ### Future Improvements 
 - I’m currently in the process of re-styling the entire website. I plan to utilize Material-UI to make the site look more professional. 
 
+
 ### Bugs
 
 - The site calls multiple different sites all at once upon loading. This could slow the site loading speed, especially if the site grows in users. I need to figure out how to load the projects to the page as needed. 
+
+- The Inspire me and Favorites buttons dont work as yet, as our group ran out of time. 
