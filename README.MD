@@ -51,6 +51,9 @@ All groups were given a week to create a fullstack app using a custom build Back
 
 - After a short brainstorming session we decided to create a Social Media App called “Project Expo”. It would be a place where General Assembly students could showcase their projects and serve as a one stop shop portfolio site. 
 
+- On this project the work was first come first serve. We discussed with each other what functionality needed to be added and each member chose what they wanted to work on. 
+
+
 
 
 ### - Backend
@@ -60,7 +63,7 @@ All groups were given a week to create a fullstack app using a custom build Back
 
 ![diagram](images/diagram.png)
 
-- Once these were established we set about coding the models and serializers.
+- Once these were established we set about coding the models and serializers. This was a collaborative effort. 
 
 ```py
 class User(AbstractUser):
@@ -436,6 +439,8 @@ Profile feed
 #### - Wins
 
 -  Coming away with a better understanding of Python and its similarity with JavaScript.
+
+- Throughout the project, I was considered to be the main debugger. Whenever my group mates had a problem they would ask me to take a look at their code and help them figure out what’s causing their particular issue. It made me feel like I knew what I was doing. 
 
 
 ### Key Learning
