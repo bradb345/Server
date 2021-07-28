@@ -53,8 +53,7 @@ All groups were given a week to create a fullstack app using a custom build Back
 
 - On this project the work was first come first serve. We discussed with each other what functionality needed to be added and each member chose what they wanted to work on. 
 
-
-
+- Throughout the week we worked in our breakout room over zoom. Occasionally, we would share our screens to discuss issues we were having or to showcase new functionality added to the app.
 
 ### - Backend
 
@@ -63,7 +62,7 @@ All groups were given a week to create a fullstack app using a custom build Back
 
 ![diagram](images/diagram.png)
 
-- Once these were established we set about coding the models and serializers. This was a collaborative effort. 
+- Once these were established we set about coding the models and serializers. This was a collaborative effort, 
 
 ```py
 class User(AbstractUser):
@@ -129,7 +128,7 @@ class Comment(models.Model):
 ```
 #### Routes
 
-- Here are the different views.
+- Here are the different views. I wrote the views for getting all the projects, getting a single project, creating projects and deleting projects. All other views were written by my teammates.  
 
 ```py
 class ProjectListView(APIView):
@@ -224,6 +223,8 @@ class ProjectFavoriteView(APIView):
             raise NotFound()
  ```
 
+- I was responsible for the login and registration of users. These are the views I wrote to facilitate this functionality. 
+
  ```py
 class RegisterView(APIView):
 
@@ -293,7 +294,7 @@ class ProfileView(APIView):
 
 #### Feeds
 
--  For the projects, I made a try catch async function that makes a GET request to the backend server to get all the projects. after awaiting the request, If the request was successful I set the response data to state, if the request failed I set the isError state to true. If there was no error but the projects state is still null, then that means that isLoading is true. If any of these states and constants are true then a message is conditionally rendered to the page.
+-  For the projects, I made a try catch async function that makes a GET request to the backend server to get all the projects. After awaiting the request, If the request was successful I set the response data to state, if the request failed I set the isError state to true. If there was no error but the projects state is still null, then that means that isLoading is true. If any of these states and constants are true then a message is conditionally rendered to the page.
 
 ```js
 const [projects, setProjects] = React.useState(null)
@@ -369,7 +370,7 @@ const filterProjects = (id) => {
 
 #### Like functionality
 
-- I took on the task of Like functionality. the likedByArray is a property of a project which is passed into the ProjectCard as a prop. I then take that array and determin if the user has liked that project already and conditionally render the like or unlike button on the page. the likedByArray is in the dependancy array so that if it changes it then triggers a re-render to the page. 
+- I took on the task of Like functionality. The likedByArray is a property of a project which is passed into the ProjectCard as a prop. I then take that array and determin if the user has liked that project already and conditionally render the like or unlike button on the page. The likedByArray is in the dependancy array so that if it changes it then triggers a re-render to the page. 
 
 - The handleLike function passes the res.data back to the Project Index compenent where that updated project is then remapped to reflect the new updates.
 
