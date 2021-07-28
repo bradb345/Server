@@ -78,7 +78,7 @@ class User(AbstractUser):
     created_project = models.CharField(max_length= 250, blank=True)
 ``` 
 
-- Here are the models for comments and projects.
+- Here are the models for comments and projects. Again, coding this was a collaborative effort. A member shared their screen and we discussed what code should be added.
 
 ```py
 class ProjectType(models.Model):
